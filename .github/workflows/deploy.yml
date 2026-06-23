@@ -12,7 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show Version
+      - name: Deploy Files
         run: |
-          echo "Deploying..."
-          python3 app.py
+          rm -rf ~/deployed-app
+          mkdir -p ~/deployed-app
+          cp -R . ~/deployed-app
+
+      - name: Verify Deployment
+        run: |
+          ls -la ~/deployed-app
+          cat ~/deployed-app/app.py
