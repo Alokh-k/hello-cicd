@@ -12,5 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Hello World
-        run: python3 app.py
+      - name: Show Version
+        run: |
+          echo "Deploying..."
+          python3 app.py
